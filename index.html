@@ -8,23 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         
         <link rel="stylesheet" href="styles.css">
+        <script src="main.js" defer></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
-
-        <!-- <style>
-            @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
-            </style> -->
-
-        <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Dangrek&display=swap" rel="stylesheet"> -->
-
-        <!-- <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dangrek&display=swap');
-            </style> -->
-    </head>
     <body>
         <header>
             <div class="heading">
@@ -67,17 +55,17 @@
                     </div>
                     <div class="field">
                         <label for="number">PHONE NUMBER <span class="required">Required</span></label>
-                        <input id="number" type="tel" required>
+                        <input id="number" type="tel" pattern="\+8801[3456789][0-9]{8}" value="+880" required>
                         <div class="warning"><p></p></div>
                     </div>
                     <div class="field">
                         <label for="password">PASSWORD <span class="required">Required</span></label>
-                        <input id="password" type="password" required>
+                        <input id="password" type="password" minLength="6" required>
                         <div class="warning"><p></p></div>
                     </div>
                     <div class="field">
                         <label for="con-password">CONFIRM PASSWORD <span class="required">Required</span></label>
-                        <input id="con-password" type="password" required>
+                        <input id="con-password" type="password" minLength="6" required>
                         <div class="warning"><p></p></div>
                     </div>
                 </div>

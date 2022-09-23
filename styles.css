@@ -19,11 +19,6 @@ html {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body {
-    display: flex;
-    flex-wrap: wrap;
-}
-
 header {
     background-image: url(images/img_small.jpg);
     background-repeat: no-repeat;
@@ -34,6 +29,8 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
+    position: fixed;
+    left: 0;
 }
 
 header .heading {
@@ -70,6 +67,8 @@ header .credit a {
 
 main {
     width: 70%;
+    margin-left: 30%;
+    padding: 5% 0;
     background-color: var(--background-color);
     display: flex;
     flex-wrap: wrap;
@@ -105,7 +104,7 @@ form .field {
     display: flex;
     flex-wrap: wrap;
     width: 30%;
-    margin: 10px 5% 0 0;
+    margin: 10px 5% 10px 0;
 }
 
 form .field label {
@@ -144,7 +143,7 @@ form .field .warning {
 }
 
 form .field .warning p {
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 600;
     color: var(--invalid-color);
 }
@@ -185,11 +184,13 @@ main .bottom-div p {
 @media (max-width: 800px) {
     header {
         width: 100%;
+        position: static;
         background-position: center;
     }
     
     main {
         padding: 50px 0;
+        margin-left: 0;
         width: 100%;
     }
 }
