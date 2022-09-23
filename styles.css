@@ -1,5 +1,11 @@
 :root {
-    
+    --background-color: #f6fbff;
+    --input-label: #808080;
+    --input-box: #e0e0e0;
+    --button-color: #ffa500;
+    --invalid-color: #da0000;
+
+    --content-padding: 5%;
 }
 
 * {
@@ -10,11 +16,12 @@
 
 html {
     font-size: 10px;
-    font-family: sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #eeeeee;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 header {
@@ -24,8 +31,6 @@ header {
     background-position: top;
     width: 30%;
     height: 100vh;
-    position: fixed;
-    left: 0;
     display: flex;
     flex-wrap: wrap;
     align-items: baseline;
@@ -36,17 +41,24 @@ header .heading {
     background-color: rgb(0, 0, 0, 0.60);
     padding: 20px 0;
     margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 10px;
 }
 
 header .heading h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: 5rem;
     color: white;
+    font-family: 'Bebas Neue', cursive;
+    margin-top: 10px;
 }
 
 header .credit {
     width: 100%;
     align-self: flex-end;
+    margin-bottom: 10px;
 }
 
 header .credit p,
@@ -54,21 +66,24 @@ header .credit a {
     color: white;
     text-align: center;
     font-size: 1.2rem;
-    margin-bottom: 10px;
 }
 
 main {
-    margin-left: 30%;
     width: 70%;
+    background-color: var(--background-color);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
 }
 
 main .texts {
-    padding: 20px 30px 40px 30px;
+    padding: 0 var(--content-padding);
+    margin-bottom: 40px;
 }
 
-main p {
-    font-weight: 100;
-    font-size: 2.2rem;
+main .texts p {
+    font-size: 3rem;
+    margin-bottom: 30px;
 }
 
 main .white-bg {
@@ -76,36 +91,111 @@ main .white-bg {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    padding: 3% 5%;
+    padding: 3% var(--content-padding);
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.100);
 }
 
-main h2 {
+form h2 {
     width: 80%;
-    font-size: 2rem;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
-main .field {
+form .field {
     display: flex;
     flex-wrap: wrap;
-    width: 35%;
-    margin: 20px 5% 0 0;
+    width: 30%;
+    margin: 10px 5% 0 0;
 }
 
-main .field label {
+form .field label {
     width: 100%;
     font-size: 1.4rem;
+    font-weight: 700;
     margin-bottom: 5px;
-    color: darkslategray;
+    color: var(--input-label);
 }
 
-main .field input {
+form .field .required {
+    font-weight: 100;
+    font-size: 1rem;
+    font-style: italic;
+}
+
+form .field input {
     width: 100%;
     font-size: 1.4rem;
     padding: 5px 10px;
-    border: 1px solid gray;
-    border-radius: 3px;
+    border: 2px solid var(--input-box);
+    border-radius: 5px;
 }
 
-main .already-text {
-    font-size: 1.2rem;
+form .invalid label {
+    color: var(--invalid-color) !important;
+}
+
+form .invalid input {
+    border: 2px solid var(--invalid-color) !important;
+}
+
+form .field .warning {
+    width: 100%;
+    height: 1.4rem;
+}
+
+form .field .warning p {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--invalid-color);
+}
+
+form .bottom-div {
+    padding: 0 var(--content-padding);
+    margin-top: 40px;
+}
+
+form .bottom-div button {
+    font-size: 1.6rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    color: white;
+    background-color: var(--button-color);
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+main .bottom-div p {
+    font-size: 1.6rem;
+    margin-top: 15px;
+}
+
+@media (max-width: 1300px) {
+    
+    main .white-bg {
+        padding-right: 0%;
+    }
+
+    form .field {
+        width: 40%;
+    } 
+}
+
+@media (max-width: 800px) {
+    header {
+        width: 100%;
+        background-position: center;
+    }
+    
+    main {
+        padding: 50px 0;
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    form .field {
+        width: 90%;
+    } 
 }
