@@ -46,15 +46,14 @@ submitButton.addEventListener("click", (e) => {
 	// Password and confirm password
 	if (passwordInput.validity.tooShort || passwordInput.validity.valueMissing ||
 		conPasswordInput.validity.tooShort || conPasswordInput.validity.valueMissing) {
-			
+				
 			if (passwordInput.validity.tooShort || passwordInput.validity.valueMissing) {
 				makeInvalid(passwordInput, "password should be atleast 6 characters long");
 			} 
 			if (conPasswordInput.validity.tooShort || conPasswordInput.validity.valueMissing) {
 				makeInvalid(conPasswordInput, "password should be atleast 6 characters long");
 			}
-	} 
-	else if (passwordInput.value !== conPasswordInput.value) {
+	} else if (passwordInput.value !== conPasswordInput.value) {
 		
 		
 		makeInvalid(passwordInput, "passwords don't match");
@@ -66,8 +65,7 @@ submitButton.addEventListener("click", (e) => {
 		if (conPasswordInput.validity.tooShort || conPasswordInput.validity.valueMissing) {
 			makeInvalid(conPasswordInput, "password should be atleast 6 characters long");
 		}
-	}
-	else {
+	} else {
 			makeValid(passwordInput);
 			makeValid(conPasswordInput);
 	}
